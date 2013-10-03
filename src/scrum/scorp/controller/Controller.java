@@ -53,7 +53,7 @@ public class Controller extends HttpServlet{
                 }
                 String evento = st.nextToken();
                 String bean = st.nextToken();
-                String servlet="ingenio.ds.gae.controller.actions."+ evento + bean;
+                String servlet="scrum.scorp.controller.actions."+ evento + bean;
                 try {
                     @SuppressWarnings("rawtypes")
 					Class claseAccion = Class.forName(servlet);

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 
-import scrum.scorp.model.entity.Departamento;
+import scrum.scorp.model.entity.Proyecto;
 import scrum.scorp.model.entity.Empleado;
 
 import scrum.scorp.model.jdo.JDO;
@@ -44,8 +44,8 @@ public class AgregarEmpleado extends Action {
 		empleado.setApellido(request.getParameter("apellido"));
 		empleado.setIdentificacion(Integer.parseInt(request.getParameter("identificacion")));
 		
-		jdo= JDO.getInstance(Departamento.class);
-		Departamento departamento=(Departamento)jdo.findOneByParameter("id", "Integer", Integer.parseInt(request.getParameter("departamento")));
+		jdo= JDO.getInstance(Proyecto.class);
+		Proyecto departamento=(Proyecto)jdo.findOneByParameter("id", "Integer", Integer.parseInt(request.getParameter("departamento")));
 		empleado.setDepartamento(departamento.getKey());
 		empleado.setSueldo(Double.parseDouble(request.getParameter("sueldo")) );
 		empleado.setTransporte(Double.parseDouble(request.getParameter("transporte")));

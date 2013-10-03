@@ -12,7 +12,7 @@ import com.google.appengine.api.datastore.Key;
 
 @SuppressWarnings("serial")
 @PersistenceCapable (identityType=IdentityType.APPLICATION)
-public class Departamento implements Serializable,Comparable<Departamento>{
+public class Proyecto implements Serializable,Comparable<Proyecto>{
 	
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -21,7 +21,7 @@ public class Departamento implements Serializable,Comparable<Departamento>{
 	private Long id;
 	@Persistent
 	private String nombre;
-	public Departamento(){
+	public Proyecto(){
 		 super();
 	}
 
@@ -48,13 +48,13 @@ public class Departamento implements Serializable,Comparable<Departamento>{
 
 	public String toString(){ 
 		return(
-		"DATOS:::DEPARTAMENTO:::...\n"+
+		"DATOS:::PROYECTO:::...\n"+
 		"ID             : "+id+"\n"+
-		"NOMBRE         : "+nombre+"\n"+"\n"+
+		"NOMBRE         : "+nombre+"\n"+
 		"");
 	}
 
-	public int compareTo(Departamento departamento){
-		return nombre.compareTo(departamento.getNombre());
+	public int compareTo(Proyecto proyecto){
+		return nombre.compareTo(proyecto.getNombre());
 	}
 }

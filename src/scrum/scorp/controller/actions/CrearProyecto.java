@@ -11,17 +11,17 @@ import java.io.Serializable;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
-import scrum.scorp.model.entity.Departamento;
+import scrum.scorp.model.entity.Proyecto;
 import scrum.scorp.model.jdo.JDO;
 
-public class AgregarDepartamento extends Action implements Serializable {
+public class CrearProyecto extends Action implements Serializable {
 	
 	@SuppressWarnings("unchecked")
 	public void run()throws ServletException, IOException{
 		try {
-			Departamento departamento=new Departamento();
+			Proyecto departamento=new Proyecto();
 			departamento.setNombre(request.getParameter("nombre"));
-			jdo= JDO.getInstance(Departamento.class);
+			jdo= JDO.getInstance(Proyecto.class);
 			jdo.insert(departamento);
 			//response.sendRedirect("/listar_departamento.jsp");
 		}catch (Exception ex) {

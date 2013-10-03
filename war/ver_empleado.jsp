@@ -1,13 +1,13 @@
 <%@ page import="java.util.List"%>
 <%@ page import="scrum.scorp.model.entity.Empleado"%>
-<%@ page import="scrum.scorp.model.entity.Departamento"%>
+<%@ page import="scrum.scorp.model.entity.Proyecto"%>
 <%@ page import="scrum.scorp.model.jdo.JDO"%>
 <%@ page import="java.util.Date"%>
 
 <%
-JDO<Departamento> jdo=JDO.getInstance(Departamento.class);
+	JDO<Proyecto> jdo=JDO.getInstance(Proyecto.class);
 Empleado empleado=(Empleado)session.getAttribute("empleado");
-Departamento departamento =jdo.findByKey(empleado.getDepartamento());
+Proyecto departamento =jdo.findByKey(empleado.getDepartamento());
 Date hoy=new Date();
 int edad= (hoy.getYear()*365+hoy.getMonth()*30+hoy.getDate());
 edad=edad-(empleado.getFdn().getYear()*365+empleado.getFdn().getMonth()*30+empleado.getFdn().getDate());
