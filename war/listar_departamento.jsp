@@ -1,6 +1,6 @@
 <%@ page import="java.util.List"%>
-<%@ page import="ingenio.ds.gae.model.entity.Departamento"%>
-<%@ page import="ingenio.ds.gae.model.jdo.JDO"%>
+<%@ page import="scrum.scorp.model.entity.Departamento"%>
+<%@ page import="scrum.scorp.model.jdo.JDO"%>
 	<%
 	JDO<Departamento> jdo=JDO.getInstance(Departamento.class);
 	List<Departamento> lista_departamento=jdo.findAll();

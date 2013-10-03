@@ -1,7 +1,7 @@
 <%@ page import="java.util.List"%>
-<%@ page import="ingenio.ds.gae.model.entity.Empleado"%>
-<%@ page import="ingenio.ds.gae.model.entity.Departamento"%>
-<%@ page import="ingenio.ds.gae.model.jdo.JDO"%>
+<%@ page import="scrum.scorp.model.entity.Empleado"%>
+<%@ page import="scrum.scorp.model.entity.Departamento"%>
+<%@ page import="scrum.scorp.model.jdo.JDO"%>
 <%@ page import="java.util.Date"%>
 
 <%
