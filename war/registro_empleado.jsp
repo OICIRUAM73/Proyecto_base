@@ -1,10 +1,10 @@
 <%@ page import="java.util.List"%>
-<%@ page import="ingenio.ds.gae.model.entity.Departamento"%>
-<%@ page import="ingenio.ds.gae.model.jdo.JDO"%>
+<%@ page import="scrum.scorp.model.entity.Proyecto"%>
+<%@ page import="scrum.scorp.model.jdo.JDO"%>
 <%@ page import="com.google.appengine.api.blobstore.BlobstoreServiceFactory" %>
 <%@ page import="com.google.appengine.api.blobstore.BlobstoreService" %>
 <%
-  BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+	BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
   String url="";
   url=((String)application.getAttribute("CONTROLLER"))+"/Agregar/Empleado";
   url=blobstoreService.createUploadUrl(url);
@@ -36,12 +36,13 @@
     		<td> 
 				<select name="departamento">
 				<%
-				JDO<Departamento> jdo=JDO.getInstance(Departamento.class);
-				List<Departamento> lista_departamento=jdo.findAll();
-				for(int i=0;i<lista_departamento.size();i++){
-					Departamento departamento=lista_departamento.get(i);
-					out.print("<option value='"+departamento.getId()+"'>"+departamento.getNombre()+"</option>");
-				}%>
+					JDO<Proyecto> jdo=JDO.getInstance(Proyecto.class);
+						List<Proyecto> lista_departamento=jdo.findAll();
+						for(int i=0;i<lista_departamento.size();i++){
+							Proyecto departamento=lista_departamento.get(i);
+							out.print("<option value='"+departamento.getId()+"'>"+departamento.getNombre()+"</option>");
+						}
+				%>
 				</select>
 	    	</td>
   		</tr>
