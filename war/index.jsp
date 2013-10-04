@@ -23,7 +23,7 @@
             </form>
     </div>
     <div class="container">
-    Hola ijijoijojiojojijuj9j9uj9uj9j9u9juh9u
+    <jsp:include page="listar_departamento.jsp"/>
       <hr>
       <footer>
         <p>&copy; Company 2013</p>
