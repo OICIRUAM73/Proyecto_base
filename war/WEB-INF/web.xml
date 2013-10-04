@@ -5,7 +5,7 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
-	<display-name>EJERCICIO GAE 01 MODELO-VISTA-CONTROLADOR</display-name>
+	<display-name>SCRUM-SCORP</display-name>
   	<description> XML de configuracion para aplicar el patron MVC en JSP</description>
 	<context-param>
         <param-name>ABSOLUTEURL</param-name>
@@ -13,7 +13,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     </context-param>
 	<servlet>
 		<servlet-name>controlador</servlet-name>
-		<servlet-class>ingenio.ds.gae.controller.Controller</servlet-class>
+		<servlet-class>scrum.scorp.controller.Controller</servlet-class>
 	</servlet>
 	<servlet-mapping>
         <servlet-name>controlador</servlet-name>

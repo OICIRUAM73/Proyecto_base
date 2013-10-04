@@ -19,10 +19,10 @@ public class CrearProyecto extends Action implements Serializable {
 	@SuppressWarnings("unchecked")
 	public void run()throws ServletException, IOException{
 		try {
-			Proyecto departamento=new Proyecto();
-			departamento.setNombre(request.getParameter("nombre"));
+			Proyecto proyecto=new Proyecto();
+			proyecto.setNombre(request.getParameter("nombre"));
 			jdo= JDO.getInstance(Proyecto.class);
-			jdo.insert(departamento);
+			jdo.insert(proyecto);
 			//response.sendRedirect("/listar_departamento.jsp");
 		}catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
