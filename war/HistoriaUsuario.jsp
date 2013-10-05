@@ -1,4 +1,5 @@
 
+
 <html>
 <head>
 <title>HOra que hace</title>
@@ -7,11 +8,7 @@
 
 <body>
 
-<div class="form-group">
-              <input name="nombre" type="text" placeholder="Nombre de US" class="form-control">
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" value="Guardar">Crear</button>
-
+<p><h1>HOla</h1>
 </body>
 
 

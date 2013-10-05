@@ -42,7 +42,7 @@
             </div>
             <div class="modal-footer">
              <div class="jumbotron">
-      <form class="form-signin" action="<%=application.getAttribute("CONTROLLER").toString()%>/Agregar/Empleado"
+      <form class="form-signin" action="<%=application.getAttribute("CONTROLLER").toString()%>/Agregar/HistoriaUsuario"
 		method="post" enctype="application/x-www-form-urlencoded">
         <div class="form-group">
               <input name="nombre" type="text" placeholder="Nombre de Proyecto" class="form-control">

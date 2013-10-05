@@ -9,7 +9,6 @@ import javax.servlet.ServletException;
 import javax.sql.rowset.serial.SerialException;
 
 import scrum.scorp.model.entity.Empleado;
-import scrum.scorp.model.entity.Proyecto;
 import scrum.scorp.model.jdo.JDO;
 
 public class AgregarHistoriaUsuario extends Action implements Serializable {
@@ -18,7 +17,10 @@ public class AgregarHistoriaUsuario extends Action implements Serializable {
 	public void run() throws ServletException, IOException
 	{
 		try{
-			
+		Empleado em= new Empleado();
+		em.setNombre(request.getParameter("nombre"));
+		jdo=JDO.getInstance(Empleado.class);
+		jdo.insert(em);
 		}
 		catch (Exception e)
 		{
