@@ -1,7 +1,9 @@
 package scrum.scorp.model.entity;
 import java.io.Serializable;
-import java.lang.Comparable;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Embedded;
+import javax.jdo.annotations.EmbeddedOnly;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
@@ -57,4 +59,7 @@ public class Proyecto implements Serializable,Comparable<Proyecto>{
 	public int compareTo(Proyecto proyecto){
 		return nombre.compareTo(proyecto.getNombre());
 	}
+	
+	
+	
 }

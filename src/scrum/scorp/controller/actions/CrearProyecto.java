@@ -21,8 +21,10 @@ public class CrearProyecto extends Action implements Serializable {
 		try {
 			Proyecto proyecto=new Proyecto();
 			proyecto.setNombre(request.getParameter("nombre"));
+			
 			jdo= JDO.getInstance(Proyecto.class);
 			jdo.insert(proyecto);
+			
 			//response.sendRedirect("/listar_departamento.jsp");
 		}catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
