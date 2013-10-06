@@ -1,12 +1,12 @@
 <%@ page import="java.util.List"%>
-<%@ page import="scrum.scorp.model.entity.Empleado"%>
+<%@ page import="scrum.scorp.model.entity.HistoriaUsuario"%>
 <%@ page import="scrum.scorp.model.entity.Proyecto"%>
 <%@ page import="scrum.scorp.model.jdo.JDO"%>
 <%@ page import="java.util.Date"%>
 
 <%
 	JDO<Proyecto> jdo=JDO.getInstance(Proyecto.class);
-Empleado empleado=(Empleado)session.getAttribute("empleado");
+HistoriaUsuario empleado=(HistoriaUsuario)session.getAttribute("empleado");
 Proyecto departamento =jdo.findByKey(empleado.getDepartamento());
 Date hoy=new Date();
 int edad= (hoy.getYear()*365+hoy.getMonth()*30+hoy.getDate());

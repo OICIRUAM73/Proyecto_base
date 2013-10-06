@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Indices written at Sat, 5 Oct 2013 22:13:27 ECT -->
 
 <datastore-indexes>
@@ -5,6 +6,15 @@
     <!-- Used 1 time in query history -->
     <datastore-index kind="HistoriaUsuario" ancestor="true" source="auto">
         <property name="usABC_INTEGER_IDX" direction="asc"/>
+=======
+<!-- Indices written at Sat, 5 Oct 2013 21:54:36 COT -->
+
+<datastore-indexes>
+
+    <!-- Used 2 times in query history -->
+    <datastore-index kind="HistoriaUsuario" ancestor="true" source="auto">
+        <property name="historiasUsuario_INTEGER_IDX" direction="asc"/>
+>>>>>>> mauricio
     </datastore-index>
 
 </datastore-indexes>
