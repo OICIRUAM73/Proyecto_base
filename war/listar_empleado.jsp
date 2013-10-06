@@ -1,21 +1,22 @@
 <%@ page import="java.util.List"%>
-<%@ page import="scrum.scorp.model.entity.Empleado"%>
+<%@ page import="scrum.scorp.model.entity.HistoriaUsuario"%>
 <%@ page import="scrum.scorp.model.jdo.JDO"%>
 	<%
-		JDO<Empleado> jdo=JDO.getInstance(Empleado.class);
-		List<Empleado> lista_empleado=jdo.findAll();
-		Double total_sueldo=0.0;
-		Double total_auxili=0.0;
-	 %>
+		JDO<HistoriaUsuario> jdo=JDO.getInstance(HistoriaUsuario.class);
+			List<HistoriaUsuario> lista_empleado=jdo.findAll();
+			Double total_sueldo=0.0;
+			Double total_auxili=0.0;
+	%>
 		<table border="1" cellspacing="0" cellpadding="5">
 			<tr><td colspan="2" align="center" >DATOS NOMINA </td></tr>
-  				<%for(int i=0;i<lista_empleado.size();i++){
-					Empleado empleado=(Empleado)lista_empleado.get(i);
-			
-					total_sueldo=total_sueldo+empleado.getSueldo();
-					total_auxili=total_auxili+empleado.getTransporte();
-					session.setAttribute("empleado",empleado);
-			%>
+  				<%
+  					for(int i=0;i<lista_empleado.size();i++){
+  							HistoriaUsuario empleado=(HistoriaUsuario)lista_empleado.get(i);
+  					
+  							total_sueldo=total_sueldo+empleado.getSueldo();
+  							total_auxili=total_auxili+empleado.getTransporte();
+  							session.setAttribute("empleado",empleado);
+  				%>
 			<tr>
 				<jsp:include page="ver_empleado.jsp"/>
 			</tr>		

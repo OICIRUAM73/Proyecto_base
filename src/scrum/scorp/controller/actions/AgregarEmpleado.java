@@ -12,7 +12,7 @@ import java.io.Serializable;
 import javax.servlet.ServletException;
 
 import scrum.scorp.model.entity.Proyecto;
-import scrum.scorp.model.entity.Empleado;
+import scrum.scorp.model.entity.HistoriaUsuario;
 import scrum.scorp.model.jdo.JDO;
 
 
@@ -44,22 +44,22 @@ public class AgregarEmpleado extends Action implements Serializable {
     	
     	BlobKey blobKey = blobs.get("foto");
     	
-		Empleado empleado=new Empleado();
+		HistoriaUsuario empleado=new HistoriaUsuario();
 		empleado.setNombre(request.getParameter("nombre"));
-		empleado.setApellido(request.getParameter("apellido"));
-		empleado.setIdentificacion(Integer.parseInt(request.getParameter("identificacion")));
+		//empleado.setApellido(request.getParameter("apellido"));
+		//empleado.setIdentificacion(Integer.parseInt(request.getParameter("identificacion")));
 		
 		jdo= JDO.getInstance(Proyecto.class);
 		Proyecto departamento=(Proyecto)jdo.findOneByParameter("id", "Integer", Integer.parseInt(request.getParameter("departamento")));
-		empleado.setDepartamento(departamento.getKey());
-		empleado.setSueldo(Double.parseDouble(request.getParameter("sueldo")) );
-		empleado.setTransporte(Double.parseDouble(request.getParameter("transporte")));
-		try {
-			empleado.setFdn(formato_fecha.parse(request.getParameter("fdn")));
-		} catch (ParseException e) {e.printStackTrace();}
-		empleado.setFotoKey(blobKey);
+		//empleado.setDepartamento(departamento.getKey());
+		//empleado.setSueldo(Double.parseDouble(request.getParameter("sueldo")) );
+		//empleado.setTransporte(Double.parseDouble(request.getParameter("transporte")));
+		//try {
+			//empleado.setFdn(formato_fecha.parse(request.getParameter("fdn")));
+		//} catch (ParseException e) {e.printStackTrace();}
+		//empleado.setFotoKey(blobKey);
 		dir+="&blob-key="+blobKey.getKeyString();
-		jdo= JDO.getInstance(Empleado.class);
+		jdo= JDO.getInstance(HistoriaUsuario.class);
 		jdo.insert(empleado);
 		response.sendRedirect(dir);
 	}

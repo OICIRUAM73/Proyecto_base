@@ -1,6 +1,6 @@
 <%@ include file="WEB-INF/InitModel.jsp"%>
 
-<html lang="en"> 
+<html lang="en" > 
 <head> 
 <meta charset="utf-8"> 
 <title>SCRUM-SCORP</title> 
@@ -8,7 +8,6 @@
 <meta name="description" content="This an example of how you may use Twitter Bootstrap Modals in your webpage. Here in this tutorial it is discussed how to create Modal windows using Twitter Bootstrap with several examples and explanations.">
 <link href="twitter-bootstrap/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="/bootstrap/css/plantilla.css" />
-
 </head>
 <body>
 
@@ -42,7 +41,7 @@
             </div>
             <div class="modal-footer">
              <div class="jumbotron">
-      <form class="form-signin" action="<%=application.getAttribute("CONTROLLER").toString()%>/Agregar/HistoriaUsuario"
+      <form class="form-signin" action="<%=application.getAttribute("CONTROLLER").toString()%>/Crear/Proyecto"
 		method="post" enctype="application/x-www-form-urlencoded">
         <div class="form-group">
               <input name="nombre" type="text" placeholder="Nombre de Proyecto" class="form-control">
@@ -60,7 +59,7 @@
 <p></p>
 </div>
 <div class=span>
- <p><a data-toggle="modal" href="#example" class="btn btn-primary btn-large">Empezar un proyecto</a></p>
+ <button data-toggle="modal" href="#example" class="btn btn-primary btn-large" type="submit">Empezar un proyecto</button>
  </div>
  <div class=span4></div>
  </div>
