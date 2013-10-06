@@ -47,7 +47,7 @@
         <div class="form-group">
               <input name="nombre" type="text" placeholder="Nombre de Proyecto" class="form-control">
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" value="Guardar">Crear</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" name="Guardar" value="crear">Crear</button>
             </form>
     </div>
             </div>
