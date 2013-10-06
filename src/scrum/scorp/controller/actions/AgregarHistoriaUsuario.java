@@ -3,6 +3,7 @@ package scrum.scorp.controller.actions;
 import java.io.IOException;
 import java.io.Serializable;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import javax.jdo.PersistenceManager;
 import javax.servlet.ServletException;
@@ -69,6 +70,8 @@ public class AgregarHistoriaUsuario extends Action implements Serializable {
 	
 	
 =======
+=======
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
 import java.rmi.server.ServerCloneException;
 
 import javax.servlet.RequestDispatcher;
@@ -100,6 +103,9 @@ public class AgregarHistoriaUsuario extends Action implements Serializable {
 		rd.forward(request,response);
 		
 	}
+<<<<<<< HEAD
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
+=======
 >>>>>>> parent of fe49e47... Revert "Historia de usuario"
 
 }

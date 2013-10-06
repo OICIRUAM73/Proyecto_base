@@ -13,14 +13,11 @@ import javax.servlet.ServletException;
 
 import scrum.scorp.model.entity.Proyecto;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
 import scrum.scorp.model.entity.HistoriaUsuario;
-import scrum.scorp.model.jdo.JDO;
-
-
-
 =======
 import scrum.scorp.model.entity.Empleado;
 >>>>>>> parent of fe49e47... Revert "Historia de usuario"
@@ -28,6 +25,16 @@ import scrum.scorp.model.jdo.JDO;
 
 
 
+<<<<<<< HEAD
+=======
+import scrum.scorp.model.entity.Empleado;
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
+import scrum.scorp.model.jdo.JDO;
+
+
+
+=======
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
 //clases para almacenamiento de blobs
 import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <%@ include file="WEB-INF/InitModel.jsp"%>
 
 <html lang="en" > 
@@ -64,6 +65,8 @@
 
 </body>
 =======
+=======
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
 
 
 <html>
@@ -78,5 +81,8 @@
 </body>
 
 
+<<<<<<< HEAD
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
+=======
 >>>>>>> parent of fe49e47... Revert "Historia de usuario"
 </html>
