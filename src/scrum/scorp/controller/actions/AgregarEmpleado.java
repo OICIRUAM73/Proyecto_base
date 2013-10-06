@@ -20,6 +20,7 @@ import scrum.scorp.model.entity.Proyecto;
 import scrum.scorp.model.entity.HistoriaUsuario;
 =======
 import scrum.scorp.model.entity.Empleado;
+<<<<<<< HEAD
 >>>>>>> parent of fe49e47... Revert "Historia de usuario"
 import scrum.scorp.model.jdo.JDO;
 
@@ -29,10 +30,15 @@ import scrum.scorp.model.jdo.JDO;
 =======
 import scrum.scorp.model.entity.Empleado;
 >>>>>>> parent of fe49e47... Revert "Historia de usuario"
+=======
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
 import scrum.scorp.model.jdo.JDO;
 
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
 =======
 >>>>>>> parent of fe49e47... Revert "Historia de usuario"
 //clases para almacenamiento de blobs
