@@ -9,13 +9,13 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 
 import scrum.scorp.model.entity.Proyecto;
-<<<<<<< HEAD
-import scrum.scorp.model.entity.Empleado;
-=======
+
+
+
 import scrum.scorp.model.entity.HistoriaUsuario;
 import scrum.scorp.model.jdo.JDO;
 
->>>>>>> mauricio
+
 
 import scrum.scorp.model.jdo.JDO;
 

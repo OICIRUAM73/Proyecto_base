@@ -26,27 +26,6 @@ public class CrearProyecto extends Action implements Serializable {
 		try {
 			Proyecto proyecto=new Proyecto();
 			
-			//us = null2.setmbreH("holaaaaaa");
-			proyecto.setNombre(request.getParameter("nombre"));
-<<<<<<< HEAD
-			try
-			{
-			pm.makePersistent(proyecto);
-			}
-			finally{
-			pm.close();
-			}
-			
-			
-			
-		}catch (Exception ex) {
-			throw new ServletException(ex.getMessage());
-		}
-		
-		
-		
-		/*RequestDispatcher rd=application.getRequestDispatcher("/index.jsp?pagina=gd");
-=======
 			try {
 				pm.makePersistent(proyecto);
 				System.out.println("aquiiiiiiiiii25prueba2234");
@@ -61,11 +40,11 @@ public class CrearProyecto extends Action implements Serializable {
 			throw new ServletException(ex.getMessage());
 		}
 		RequestDispatcher rd=application.getRequestDispatcher("/HistoriaUsuario.jsp");
->>>>>>> mauricio
+
 		if(rd==null){
 			throw new ServletException("pagina no encontrada");
 		}
-		rd.forward(request,response);*/
+		rd.forward(request,response);
 		response.sendRedirect("/registro_HistoriaUsuario.jsp");
 	}
 	

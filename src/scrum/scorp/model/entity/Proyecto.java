@@ -1,7 +1,7 @@
 package scrum.scorp.model.entity;
 
 import java.io.Serializable;
-<<<<<<< HEAD
+
 import java.lang.Comparable;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,12 +12,12 @@ import javax.jdo.annotations.Column;
 import javax.jdo.annotations.Element;
 import javax.jdo.annotations.Embedded;
 import javax.jdo.annotations.EmbeddedOnly;
-=======
+
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.annotations.Element;
->>>>>>> mauricio
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
@@ -32,35 +32,7 @@ import com.google.appengine.api.datastore.Key;
 
 
 @SuppressWarnings("serial")
-<<<<<<< HEAD
-@PersistenceCapable (identityType=IdentityType.APPLICATION,detachable="true")
-public class Proyecto implements Serializable{
-	@PrimaryKey
-	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	//@Extension(vendorName="datanucleus", key="gae.encoded-pk", value="true")
-	private Key key;
-	@Persistent
-	private String nombre;
-	
-	@Persistent(mappedBy= "proyectoABC")
-	@Element(dependent="true")
-	private List<HistoriaUsuario> usABC = new ArrayList<HistoriaUsuario>();
-	
-	public Proyecto(){
-		 super();
-	}
 
-	
-	public Key getKey(){ 
-		return key;
-	}
-	public List getHistorias( )
-	{
-		return usABC;
-	}
-	public String getNombre(){ 
-		return nombre;
-=======
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class Proyecto implements Serializable, Comparable<Proyecto> {
 
@@ -87,7 +59,7 @@ public class Proyecto implements Serializable, Comparable<Proyecto> {
 
 	public Key getId() {
 		return id;
->>>>>>> mauricio
+
 	}
 
 	
@@ -95,19 +67,6 @@ public class Proyecto implements Serializable, Comparable<Proyecto> {
 	public String getNombre() {
 		return nombre;
 	}
-<<<<<<< HEAD
-	public void setNombre(String nombre ){ 
-		 this.nombre=nombre;
-	}
-	
-	
-	
-	
-	
-	public void setUsABC (List usABC)
-	{
-		this.usABC=usABC;
-=======
 
 	public void setId(Key id) {
 		this.id = id;
@@ -124,7 +83,7 @@ public class Proyecto implements Serializable, Comparable<Proyecto> {
 
 	public int compareTo(Proyecto proyecto) {
 		return nombre.compareTo(proyecto.getNombre());
->>>>>>> mauricio
+
 	}
 	
 	
