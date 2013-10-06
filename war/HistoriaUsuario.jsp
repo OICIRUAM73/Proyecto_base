@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ include file="WEB-INF/InitModel.jsp"%>
 
 <html lang="en" > 
@@ -62,4 +63,20 @@
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
 
 </body>
+=======
+
+
+<html>
+<head>
+<title>HOra que hace</title>
+
+</head>
+
+<body>
+
+<p><h1>HOla</h1>
+</body>
+
+
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
 </html>

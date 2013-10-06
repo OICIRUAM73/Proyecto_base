@@ -4,11 +4,15 @@ package scrum.scorp.controller.actions;
 
 
 //calses para que sea servlet
+
+
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.servlet.ServletException;
 
 import scrum.scorp.model.entity.Proyecto;
+<<<<<<< HEAD
 
 
 
@@ -17,12 +21,19 @@ import scrum.scorp.model.jdo.JDO;
 
 
 
+=======
+import scrum.scorp.model.entity.Empleado;
+>>>>>>> parent of fe49e47... Revert "Historia de usuario"
 import scrum.scorp.model.jdo.JDO;
+
+
 
 //clases para almacenamiento de blobs
 import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
+
+
 
 
 
@@ -32,10 +43,9 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class AgregarEmpleado extends Action {
+public class AgregarEmpleado extends Action implements Serializable {
 	
 	private static final DateFormat formato_fecha = new SimpleDateFormat("dd/MM/yyyy");
-	
 	
 	@SuppressWarnings("unchecked")
 	public void run()throws ServletException, IOException{
