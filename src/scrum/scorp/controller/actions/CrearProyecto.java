@@ -7,14 +7,11 @@ package scrum.scorp.controller.actions;
 //clases para el manejo de servlet
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 
-import scrum.scorp.model.entity.HistoriaUsuario;
 import scrum.scorp.model.entity.Proyecto;
 
 public class CrearProyecto extends Action implements Serializable {
@@ -26,7 +23,6 @@ public class CrearProyecto extends Action implements Serializable {
 			proyecto.setNombre(request.getParameter("nombre"));
 			try {
 				pm.makePersistent(proyecto);
-				System.out.println("aquiiiiiiiiii25prueba2234");
 				
 				
 			} finally {
@@ -37,7 +33,7 @@ public class CrearProyecto extends Action implements Serializable {
 		}catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
-		RequestDispatcher rd=application.getRequestDispatcher("/HistoriaUsuario.jsp");
+		RequestDispatcher rd=application.getRequestDispatcher("/reg_HistoriaUsuario.jsp");
 		if(rd==null){
 			throw new ServletException("pagina no encontrada");
 		}

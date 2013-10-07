@@ -23,8 +23,9 @@ public class AgregarHistoriaUsuario extends Action implements Serializable {
 		try {
 			HistoriaUsuario hu = new HistoriaUsuario();
 			hu.setNombre(request.getParameter("nombre"));
-			
 			hu.setDescripcion(request.getParameter("descripcion"));
+			hu.setPrioridad(request.getParameter("prioridad"));
+			hu.setEsfuerzo(request.getParameter("esfuerzo"));
 			Query query = pm.newQuery(Proyecto.class);
 			query.setFilter("nombre == proyecto_param");
 			
@@ -47,11 +48,11 @@ public class AgregarHistoriaUsuario extends Action implements Serializable {
 				pm.close();
 			}
 			
-			
 		} catch (Exception e) {
 			throw new ServletException(e.getMessage());
 		}
-		RequestDispatcher rd = application.getRequestDispatcher("/HistoriaUsuario.jsp");
+	
+		RequestDispatcher rd = application.getRequestDispatcher("/reg_HistoriaUsuario.jsp");
 		if (rd == null) {
 			throw new ServletException("pagina no encontrada");
 		}

@@ -62,7 +62,6 @@ public class Controller extends HttpServlet {
 				String bean = st.nextToken();
 				String servlet = "scrum.scorp.controller.actions." + evento
 						+ bean;
-				System.out.println("aquiiii");
 				try {
 					@SuppressWarnings("rawtypes")
 					Class claseAccion = Class.forName(servlet);
@@ -86,10 +85,8 @@ public class Controller extends HttpServlet {
 						"MODELO DE CONEXION A BD NULO, IMPOSIBLE CONTINUAR CON LA OPERACION");
 			}
 			accion.setRequest(request);
-			System.out.println("aquiiii3");
 			accion.setPersistenceManager(PMF.get().getPersistenceManager());
 			accion.setResponse(response);
-			System.out.println("aquiii4");
 			accion.setApplication(context);
 			accion.run();
 		} catch (Exception e) {
