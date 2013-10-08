@@ -8,6 +8,18 @@
 <meta name="description" content="This an example of how you may use Twitter Bootstrap Modals in your webpage. Here in this tutorial it is discussed how to create Modal windows using Twitter Bootstrap with several examples and explanations.">
 <link href="twitter-bootstrap/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="/bootstrap/css/plantilla.css" />
+<script >
+function validateForm()
+{
+var x=document.forms["form"]["nombre"].value;
+
+if (x==null || x=="")
+  {
+  alert("Se deben rellenar todos los datos");
+  return false;
+  }
+}
+</script>
 </head>
 <body>
 
@@ -41,7 +53,7 @@
             </div>
             <div class="modal-footer">
              <div class="jumbotron">
-      <form class="form-signin" action="<%=application.getAttribute("CONTROLLER").toString()%>/Crear/Proyecto"
+      <form  name="form" class="form-signin" onsubmit=" return validateForm()" action="<%=application.getAttribute("CONTROLLER").toString()%>/Crear/Proyecto"
 		method="post" enctype="application/x-www-form-urlencoded">
         <div class="form-group">
               <input name="nombre" type="text" placeholder="Nombre de Proyecto" class="form-control">
