@@ -14,9 +14,9 @@ import javax.servlet.http.HttpSession;
 
 import scrum.scorp.model.entity.Proyecto;
 
+@SuppressWarnings("serial")
 public class CrearProyecto extends Action implements Serializable {
 	
-	@SuppressWarnings("unchecked")
 	public void run()throws ServletException, IOException{
 		try {
 			Proyecto proyecto=new Proyecto();

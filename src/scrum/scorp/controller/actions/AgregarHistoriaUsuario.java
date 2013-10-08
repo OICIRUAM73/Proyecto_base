@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 import scrum.scorp.model.PMF;
 import scrum.scorp.model.entity.HistoriaUsuario;
 import scrum.scorp.model.entity.Proyecto;
-import scrum.scorp.model.jdo.JDO;
 
+@SuppressWarnings("serial")
 public class AgregarHistoriaUsuario extends Action implements Serializable {
 
 	@SuppressWarnings("unchecked")

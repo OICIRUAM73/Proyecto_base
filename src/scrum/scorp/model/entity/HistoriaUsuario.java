@@ -100,6 +100,7 @@ public class HistoriaUsuario implements Serializable,
 		Query query = pm.newQuery(Proyecto.class);
 		query.setFilter("nombre == proyecto_param");
 		query.declareParameters("String proyecto_param");
+		@SuppressWarnings("unchecked")
 		List<Proyecto> resultado = (List<Proyecto>) query.execute(proyecto_actual);
 		Proyecto proyecto = null;
 		if (!resultado.isEmpty()) {
