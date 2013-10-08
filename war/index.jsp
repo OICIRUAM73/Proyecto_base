@@ -15,9 +15,15 @@ var x=document.forms["form"]["nombre"].value;
 
 if (x==null || x=="")
   {
+	
   alert("Se deben rellenar todos los datos");
+  
   return false;
+  
   }
+  
+  
+
 }
 </script>
 </head>
@@ -37,7 +43,7 @@ if (x==null || x=="")
 <div class="container">  
 <h2>BIENVENIDOS</h2>  
 <div class="well"> 
-<img src="https://si0.twimg.com/profile_images/2482198530/iql2hfa8kks5q78q4ag3.jpeg" alt="Obra de K. Haring"> 
+<img src="scrum-scorp.jpg" alt="Obra de Ale"> 
 </div>  
 </div> 
 <div class="container">
@@ -56,7 +62,7 @@ if (x==null || x=="")
       <form  name="form" class="form-signin" onsubmit=" return validateForm()" action="<%=application.getAttribute("CONTROLLER").toString()%>/Crear/Proyecto"
 		method="post" enctype="application/x-www-form-urlencoded">
         <div class="form-group">
-              <input name="nombre" type="text" placeholder="Nombre de Proyecto" class="form-control">
+              <input name="nombre" type="text" placeholder="Nombre de Proyecto" class="form-control" required>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" value="Guardar">Crear</button>
             </form>
