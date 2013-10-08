@@ -28,7 +28,7 @@ if (x==null || x==""|| x1==null || x1==""||x2==null || x2==""||x3==null || x3=="
 
 <div id="example" class="modal hide fade in" style="display: none; ">
             <div class="modal-header">
-              <a class="close" data-dismiss="modal">×</a>
+              <a class="close" data-dismiss="modal">x</a>
               <h3>Historia de usuario</h3>
             </div>
             <div class="modal-body">
