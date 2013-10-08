@@ -10,9 +10,9 @@ import java.io.Serializable;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
 
 import scrum.scorp.model.entity.Proyecto;
-import scrum.scorp.model.jdo.JDO;
 
 public class CrearProyecto extends Action implements Serializable {
 	
@@ -21,14 +21,19 @@ public class CrearProyecto extends Action implements Serializable {
 		try {
 			Proyecto proyecto=new Proyecto();
 			proyecto.setNombre(request.getParameter("nombre"));
-			jdo= JDO.getInstance(Proyecto.class);
-			jdo.insert(proyecto);
-			//response.sendRedirect("/listar_departamento.jsp");
+			try {
+				pm.makePersistent(proyecto);
+				
+				
+			} finally {
+				pm.close();
+			}
+			HttpSession sesion = request.getSession();
+			sesion.setAttribute("trabajo", request.getParameter("nombre"));
 		}catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
-		
-		RequestDispatcher rd=application.getRequestDispatcher("/index.jsp?pagina=gd");
+		RequestDispatcher rd=application.getRequestDispatcher("/reg_HistoriaUsuario.jsp");
 		if(rd==null){
 			throw new ServletException("pagina no encontrada");
 		}

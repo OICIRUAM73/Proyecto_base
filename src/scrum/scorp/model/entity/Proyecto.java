@@ -1,7 +1,10 @@
 package scrum.scorp.model.entity;
-import java.io.Serializable;
-import java.lang.Comparable;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.jdo.annotations.Element;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
@@ -11,50 +14,54 @@ import javax.jdo.annotations.PrimaryKey;
 import com.google.appengine.api.datastore.Key;
 
 @SuppressWarnings("serial")
-@PersistenceCapable (identityType=IdentityType.APPLICATION)
-public class Proyecto implements Serializable,Comparable<Proyecto>{
-	
+@PersistenceCapable(identityType = IdentityType.APPLICATION)
+public class Proyecto implements Serializable, Comparable<Proyecto> {
+
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Key key;
-	@Persistent(valueStrategy=IdGeneratorStrategy.SEQUENCE)
-	private Long id;
+	private Key id;
 	@Persistent
 	private String nombre;
-	public Proyecto(){
-		 super();
+	@Persistent(mappedBy = "proyecto")
+	@Element(dependent = "true")
+	private List<HistoriaUsuario> historiasUsuario = new ArrayList<HistoriaUsuario>();
+
+	public List<HistoriaUsuario> getHistoriasUsuario() {
+		return historiasUsuario;
 	}
 
-	public Long getId(){ 
+	public void setHistoriasUsuario(List<HistoriaUsuario> historiasUsuario) {
+		this.historiasUsuario = historiasUsuario;
+	}
+
+	public Proyecto() {
+		super();
+	}
+
+	public Key getId() {
 		return id;
 	}
-	public Key getKey(){ 
-		return key;
-	}
-	public String getNombre(){ 
+
+	
+
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setKey(Key key){ 
-		this.key=key;
-	}
-	public void setId(Long id ){ 
-		 this.id=id;
-	}
-	public void setNombre(String nombre ){ 
-		 this.nombre=nombre;
-	}
-	
-
-	public String toString(){ 
-		return(
-		"DATOS:::PROYECTO:::...\n"+
-		"ID             : "+id+"\n"+
-		"NOMBRE         : "+nombre+"\n"+
-		"");
+	public void setId(Key id) {
+		this.id = id;
 	}
 
-	public int compareTo(Proyecto proyecto){
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String toString() {
+		return ("DATOS:::PROYECTO:::...\n" + "ID             : " + id + "\n"
+				+ "NOMBRE         : " + nombre + "\n" + "");
+	}
+
+	public int compareTo(Proyecto proyecto) {
 		return nombre.compareTo(proyecto.getNombre());
 	}
 }
