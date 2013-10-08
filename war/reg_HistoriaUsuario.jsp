@@ -1,5 +1,5 @@
  <%@ include file="WEB-INF/InitModel.jsp"%>
-
+<!DOCTYPE html>
 <html lang="en" > 
 <head> 
 <meta charset="utf-8"> 
@@ -8,6 +8,20 @@
 <meta name="description" content="This an example of how you may use Twitter Bootstrap Modals in your webpage. Here in this tutorial it is discussed how to create Modal windows using Twitter Bootstrap with several examples and explanations.">
 <link href="/twitter-bootstrap/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="/bootstrap/css/plantilla.css" />
+<script >
+function validateForm()
+{
+var x=document.forms["form"]["nombre"].value;
+var x1=document.forms["form"]["descripcion"].value;
+var x2=document.forms["form"]["prioridad"].value;
+var x3=document.forms["form"]["esfuerzo"].value;
+if (x==null || x==""|| x1==null || x1==""||x2==null || x2==""||x3==null || x3=="")
+  {
+  alert("Se deben rellenar todos los datos");
+  return false;
+  }
+}
+</script>
 </head>
 <body>
 <div class="container">
@@ -18,7 +32,7 @@
               <h3>Historia de usuario</h3>
             </div>
             <div class="modal-body">
-              <form class="form-signin" action="<%=application.getAttribute("CONTROLLER").toString()%>/Agregar/HistoriaUsuario">
+              <form  name="form" class="form-signin" onsubmit=" return validateForm()" action="<%=application.getAttribute("CONTROLLER").toString()%>/Agregar/HistoriaUsuario">
               <div class="form-group">
   				<p><span class="label">Titulo</span></p> 
   				<input name="nombre" placeholder="Titulo" type="text" class="form-control"><br><br>
