@@ -21,6 +21,9 @@ public class CrearProyecto extends Action implements Serializable {
 		try {
 			Proyecto proyecto=new Proyecto();
 			proyecto.setNombre(request.getParameter("nombre"));
+			proyecto.setDescripcion(request.getParameter("descripcion"));
+			proyecto.setFInicio(request.getParameter("fInicio"));
+			proyecto.setFFin(request.getParameter("fFin"));
 			try {
 				pm.makePersistent(proyecto);
 				

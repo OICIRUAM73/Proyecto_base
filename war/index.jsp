@@ -50,20 +50,46 @@ if (x==null || x=="")
 
 <div id="example" class="modal hide fade in" style="display: none; ">
             <div class="modal-header">
-              <a class="close" data-dismiss="modal">×</a>
-              <h3>Ingrese nombre del proyecto</h3>
+              <a class="close" data-dismiss="modal">x</a>
+              <h3>Datos del proyecto</h3>
             </div>
             <div class="modal-body">
               
-              <p>Aqui podras ingresar el nombre de proyecto que deseas realizar</p>		        
+              <p>En estos campos se podran ingresar el nombre del proyecto y su correspondiente descripcion</p>		        
             </div>
             <div class="modal-footer">
              <div class="jumbotron">
       <form  name="form" class="form-signin" onsubmit=" return validateForm()" action="<%=application.getAttribute("CONTROLLER").toString()%>/Crear/Proyecto"
 		method="post" enctype="application/x-www-form-urlencoded">
-        <div class="form-group">
-              <input name="nombre" type="text" placeholder="Nombre de Proyecto" class="form-control" required>
-            </div>
+        <div class="control-group">
+        	<div class ="controls">
+              <input name="nombre" type="text" placeholder="Nombre de Proyecto" class="form-control" required><br/>
+        </div>
+        </div>
+        <div class="control-group">
+            <div class ="controls">
+        		<br/>
+        		
+              <textarea  name="descripcion" placeholder="Descripcion del Proyecto" class="input-xlarge" id="textarea" rows="3" required></textarea>  
+         </div> 
+         </div>
+         <div class="control-group">
+         
+         <div class="row">
+         <div class ="controls">
+         		<br/>
+         	<div class="span6">	
+        		Fecha de inicio:<br/>
+        		<input type="date" name="fInicio" required>
+         	</div>
+         	<div class="span6">
+         		Fecha limite:<br/>   
+         		<input type="date" name="fFin" required>
+         	</div>
+         </div>
+         </div>
+          </div>
+            
             <button class="btn btn-lg btn-primary btn-block" type="submit" value="Guardar">Crear</button>
             </form>
     </div>
