@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import scrum.scorp.model.PMF;
 import scrum.scorp.model.entity.HistoriaUsuario;
 import scrum.scorp.model.entity.Proyecto;
-import scrum.scorp.model.jdo.JDO;
 
 public class AgregarHistoriaUsuario extends Action implements Serializable {
 
@@ -26,6 +25,7 @@ public class AgregarHistoriaUsuario extends Action implements Serializable {
 			hu.setDescripcion(request.getParameter("descripcion"));
 			hu.setPrioridad(request.getParameter("prioridad"));
 			hu.setEsfuerzo(request.getParameter("esfuerzo"));
+			hu.setEstado("NO INICIADA");
 			Query query = pm.newQuery(Proyecto.class);
 			query.setFilter("nombre == proyecto_param");
 			

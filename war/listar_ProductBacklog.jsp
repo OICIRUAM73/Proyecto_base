@@ -42,7 +42,8 @@
 		<table class="table table-condensed table-hover table-striped">
 			<tr><td colspan="5" style="text-align:center" >LISTA DE PROYECTOS </td></tr>
 			<tr><td style="text-align:center" >NOMBRE</td><td style="text-align:center" >DESCRIPCION</td>
-			<td style="text-align:center" >PRIORIDAD</td><td style="text-align:center" >ESFUERZO</td></tr>
+			<td style="text-align:center" >PRIORIDAD</td><td style="text-align:center" >ESFUERZO</td>
+			<td style="text-align:center" >PRIORIDAD</td></tr>
   				<%
   					for(int i=0;i<lista_historias.size();i++){
   							HistoriaUsuario historia=(HistoriaUsuario)lista_historias.get(i);
@@ -51,6 +52,7 @@
   							out.print("<td style=\"text-align:center\">"+historia.getDescripcion()+"</td>");
   							out.print("<td style=\"text-align:center\">"+historia.getPrioridad()+"</td>");
   							out.print("<td style=\"text-align:center\">"+historia.getEsfuerzo()+"</td>");
+  							out.print("<td style=\"text-align:center\">"+historia.getPrioridad()+"</td>");
   							out.print("</tr>");
   						}
   				%>

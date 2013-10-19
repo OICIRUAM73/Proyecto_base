@@ -1,10 +1,12 @@
 package scrum.scorp.model.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
+import javax.jdo.annotations.Element;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
@@ -32,7 +34,28 @@ public class HistoriaUsuario implements Serializable,
 	@Persistent
 	private String esfuerzo;
 	@Persistent
+	private String estado;
+	@Persistent
 	private Proyecto proyecto;
+	@Persistent(mappedBy = "historia")
+	@Element(dependent = "true")
+	private List<Tarea> tarea = new ArrayList<Tarea>();
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public List<Tarea> getTarea() {
+		return tarea;
+	}
+
+	public void setTarea(List<Tarea> tarea) {
+		this.tarea = tarea;
+	}
 
 	public String getPrioridad() {
 		return prioridad;
@@ -100,7 +123,8 @@ public class HistoriaUsuario implements Serializable,
 		Query query = pm.newQuery(Proyecto.class);
 		query.setFilter("nombre == proyecto_param");
 		query.declareParameters("String proyecto_param");
-		List<Proyecto> resultado = (List<Proyecto>) query.execute(proyecto_actual);
+		List<Proyecto> resultado = (List<Proyecto>) query
+				.execute(proyecto_actual);
 		Proyecto proyecto = null;
 		if (!resultado.isEmpty()) {
 			for (Proyecto p : resultado) {
