@@ -79,7 +79,6 @@ public class Controller extends HttpServlet {
 					throw new ServletException(servlet + ": " + ex.getMessage());
 				}
 			}
-			System.out.println("aquiiii2");
 			if (pm == null) {
 				throw new ServletException(
 						"MODELO DE CONEXION A BD NULO, IMPOSIBLE CONTINUAR CON LA OPERACION");

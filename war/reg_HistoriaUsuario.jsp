@@ -34,9 +34,9 @@ if (x==null || x==""|| x1==null || x1=="")
               <form  name="form" class="form-signin" onsubmit=" return validateForm()" action="<%=application.getAttribute("CONTROLLER").toString()%>/Agregar/HistoriaUsuario">
               <div class="form-group">
   				<p><span class="label">Titulo</span></p> 
-  				<input name="nombre" placeholder="Titulo" type="text" class="form-control " required><br><br>
+  				<textarea name="nombre" placeholder="Titulo" class="input-xlarge" rows="2" required></textarea><br>
   				<p><span class="label">Descripcion</span></p> 
-  				<input name="descripcion" placeholder="Decripcion" type="text" class="form-control" required ><br><br>  
+  				<textarea name="descripcion" placeholder="Decripcion" type="text" class="input-xlarge" rows="3" required ></textarea><br>  
   				<p><span class="label">Prioridad</span></p>   
   				<input name="prioridad" type="text" placeholder="Prioridad" class="form-control"><br><br> 
   				<p><span class="label">Esfuerzo</span></p>  
@@ -84,29 +84,6 @@ if (x==null || x==""|| x1==null || x1=="")
 
 </div>
 
-<%-- <div class=span>
- <div id="example" class="well">
-            <div class="modal-header">
-              <a class="close" data-dismiss="modal">×</a>
-              <h3>Ingrese los datos de Historia de Usuario</h3>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-             <div class="jumbotron">
-      <form class="form-signin" action="<%=application.getAttribute("CONTROLLER").toString()%>/Agregar/HistoriaUsuario"
-		method="post" enctype="application/x-www-form-urlencoded">
-        <div class="form-group">
-              <input name="nombre" type="text" placeholder="Nombre de historia" class="form-control">
-              <input name="descripcion" type="text" placeholder="Descripcion" class="form-control">
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" value="Guardar">Crear</button>
-            </form>
-    </div>
-            </div>
-          </div>
- </div> --%>
  <div class=span4></div>
  
 
