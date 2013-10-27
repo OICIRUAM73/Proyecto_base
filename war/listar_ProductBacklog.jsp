@@ -173,7 +173,7 @@
 				}
 			%>
 		</table>
-		<form action="/listarTareas.jsp" method="post">
+		<form action="listarTareas.jsp" method="post">
 			<div style="text-align: center">
 				<button class="btn btn-xs btn-warning">Listar Tareas</button>
 			</div>
