@@ -19,7 +19,7 @@ public class ActualizarHistoriaUsuario extends Action implements Serializable {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try
 		{	
-			System.out.println("entro");
+			System.out.println(request.getParameter("variable"));
 			
 			//HistoriaUsuario hu = pm.getObjectById(HistoriaUsuario.class,request.getParameter("variable").toString());
 			Query query = pm.newQuery(HistoriaUsuario.class);

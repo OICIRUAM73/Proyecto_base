@@ -129,43 +129,30 @@
 							+ historia.getEsfuerzo() + "</td>");
 					System.out.println(historia.getEstado());
 					if (historia.getEstado().toString().equals("NO INICIADA")) {
-						out.print("<td style=\"text-align:center\" >"
-								+ "<select name=\"combo\" onchange=\"myFunction(this)\"  >"
-								+ "<option name= \"estado\" value ='"
-								+ historia.getNombre() + "'>" + historia.getEstado()
-								+ "</option>" + "<option name= \"estado1\" value ="
-								+ historia.getNombre() + ">" + estadoB
-								+ "</option>" + "<option name= \"estado2\" value ="
-								+ historia.getNombre() + ">" + estadoC
-								+ "</option>" + "</select>" + "</td>");
+						out.print("<td   style=\"text-align:center\" >"
+								+ "<select id=\"selec1\"  name=\"combo1\" onchange=\"myFunction('"+ historia.getNombre() + "', this)\"  >"
+								+ "<option  name= \"estado\" value ='"+ historia.getNombre() + "'>" + historia.getEstado()+ "</option>" 
+								+ "<option  name= \"estado1\" value ="+ historia.getNombre() + ">" + estadoB+ "</option>" 
+								+ "<option  name= \"estado2\" value ="+ historia.getNombre() + ">" + estadoC + "</option>" + "</select>" + "</td>");
 					} else if (historia.getEstado().toString()
 							.equals("EN PROGRESO")) {
 						System.out.println("en progreso");
-						out.print("<td style=\"text-align:center\">"
-								+ "<select name=\"combo\" onchange=\"myFunction(this)\"  >"
-								+ "<option name =\"estado12\" value ="
-								+ historia.getNombre() + " >"
-								+ historia.getEstado() + "</option>"
-								+ "<option name =\"estado13\"  value ="
-								+ historia.getNombre() + ">" + estadoA
-								+ "</option>"
-								+ "<option name =\"estado15\"  value ="
-								+ historia.getNombre() + ">" + estadoC
-								+ "</option>" + "</select>" + "</td>");
+						out.print("<td  style=\"text-align:center\">"
+								+ "<select id=\"selec2\"  name=\"combo2\" onchange=\"myFunction('"+ historia.getNombre() + "',this)\"  >"
+								+ "<option  name =\"estado12\" value ="+ historia.getNombre() + " >"+ historia.getEstado() + "</option>"
+								+ "<option  name =\"estado13\"  value ="+ historia.getNombre() + ">" + estadoA+ "</option>"
+								+ "<option  name =\"estado15\"  value ="+ historia.getNombre()+ ">" + estadoC+ "</option>" 
+								+ "</select>" + "</td>");
 					}
 
 					else {
 						System.out.println("Finalizada");
-						out.print("<td style=\"text-align:center\">"
-								+ "<select name=\"combo\" onchange=\"myFunction(this)\"  >"
-								+ "<option name =\"estado\" value ="
-								+ historia.getNombre() + " >"
-								+ historia.getEstado() + "</option>"
-								+ "<option name =\"estado1\" value ="
-								+ historia.getNombre() + " >" + estadoA
-								+ "</option>" + "<option name =\"estado2\" value ="
-								+ historia.getNombre() + " >" + estadoB
-								+ "</option>" + "</select>" + "</td>");
+						out.print("<td  style=\"text-align:center\">"
+								+ "<select id=\"selec3\"  name=\"combo3\" onchange=\"myFunction('"+ historia.getNombre() + "',this)\"  >"
+								+ "<option  name =\"estado23\" value ="+ historia.getNombre() + " >"+ historia.getEstado() + "</option>"
+								+ "<option  name =\"estado19\" value ="+ historia.getNombre() + " >" + estadoA+ "</option>" 
+								+ "<option  name =\"estado29\" value ="+ historia.getNombre() + " >" + estadoB+ "</option>" 
+								+ "</select>" + "</td>");
 					}
 
 					out.print("</tr>");
@@ -173,7 +160,7 @@
 				}
 			%>
 		</table>
-		<form action="listarTareas.jsp" method="post">
+		<form action="/listarTareas.jsp" method="post">
 			<div style="text-align: center">
 				<button class="btn btn-xs btn-warning">Listar Tareas</button>
 			</div>
@@ -194,11 +181,14 @@
 		src="/../twitter-bootstrap/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-tab.js"></script>
 
 	<script>
-	function myFunction(combo)
+	function myFunction(combo,hola)
 	{	
-		var valor=combo.value;
-		alert("combo"+valor);
-		var cambio=combo.options[combo.selectedIndex].text;
+		var cambio=hola.options[hola.selectedIndex].text;
+		
+		var valor=combo;
+		
+		alert(valor);
+		
 		location="<%=application.getAttribute("CONTROLLER").toString()%>/Actualizar/HistoriaUsuario?variable="+ valor + "&variable2=" + cambio + ""		
 				}
 	</script>
