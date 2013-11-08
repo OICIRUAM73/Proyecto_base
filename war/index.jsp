@@ -1,5 +1,5 @@
 <%@ include file="WEB-INF/InitModel.jsp"%>
-
+<%@page import="javax.jdo.PersistenceManager"%>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<h2>BIENVENIDOS</h2>
+		<h2>BIENVENIDO</h2>
 		<div class="well">
 			<img src="scrum-scorp.jpg" alt="Obra de Ale">
 		</div>
@@ -65,25 +65,33 @@
 						method="post" enctype="application/x-www-form-urlencoded">
 						<div class="control-group">
 							<div class="controls">
-								<span class="label">Nombre del Proyecto</span><br> <br>
+								<span class="label" style="text-align: left; font-size: small;">Nombre
+									del Proyecto</span><br> <br>
 								<textarea name="nombre" placeholder="Nombre de Proyecto"
 									class="input-xlarge" required></textarea>
-								<br> <br> <span class="label">Descripcion del
-									Proyecto</span><br> <br>
+								<br> <br> <span class="label"
+									style="text-align: left; font-size: small;">Descripcion
+									del Proyecto</span><br> <br>
 								<textarea name="descripcion"
 									placeholder="Descripcion del Proyecto" class="input-xlarge"
 									id="textarea" rows="3" required></textarea>
-								<br> <span class="label">Fecha de inicio:</span> <br>
-								<br> <input type="date" name="fInicio" class="form-control" required> <br>
-								<span class="label">Fecha limite:</span> <br>
-								<br> <input type="date" name="fFin" class="form-control"  required>
+								<br> <br>
+								<span class="label" style="text-align: left; font-size: small;">Fecha
+									de inicio:</span> <br> <br> <input type="date"
+									name="fInicio" class="form-control" required> <br>
+								<br>
+								<span class="label" style="text-align: left; font-size: small;">Fecha
+									limite:</span> <br> <br> <input type="date" name="fFin"
+									class="form-control" required>
 
 							</div>
 						</div>
-
-
-						<button class="btn btn-lg btn-primary btn-block" type="submit"
-							value="Guardar">Crear</button>
+						<div class="row show-grid">
+							<div class="span2" style="text-align: left">
+								<button class="btn btn-large btn-primary" type="submit"
+									value="Guardar">Crear</button>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>
@@ -100,7 +108,9 @@
 				class="btn btn-primary btn-large" type="submit">Empezar un
 				proyecto</button>
 		</div>
-		<div class=span4></div>
+		<div class=span12>
+		
+		</div>
 	</div>
 
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->

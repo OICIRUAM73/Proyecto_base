@@ -40,6 +40,17 @@ public class HistoriaUsuario implements Serializable,
 	@Persistent(mappedBy = "historia")
 	@Element(dependent = "true")
 	private List<Tarea> tarea = new ArrayList<Tarea>();
+	@Persistent(mappedBy = "historia")
+	@Element(dependent = "true")
+	private List<CriterioAceptacion> criterio = new ArrayList<CriterioAceptacion>();
+
+	public List<CriterioAceptacion> getCriterio() {
+		return criterio;
+	}
+
+	public void setCriterio(List<CriterioAceptacion> criterio) {
+		this.criterio = criterio;
+	}
 
 	public String getEstado() {
 		return estado;

@@ -28,6 +28,66 @@ public class Proyecto implements Serializable, Comparable<Proyecto> {
 	private String fInicio;
 	@Persistent
 	private String fFin;
+	@Persistent
+	private String scrumMaster;
+	@Persistent
+	private String productOwner;
+	@Persistent
+	private String team1;
+	@Persistent
+	private String team2;
+	@Persistent
+	private String team3;
+	@Persistent
+	private String team4;
+	public String getScrumMaster() {
+		return scrumMaster;
+	}
+
+	public void setScrumMaster(String scrumMaster) {
+		this.scrumMaster = scrumMaster;
+	}
+
+	public String getProductOwner() {
+		return productOwner;
+	}
+
+	public void setProductOwner(String productOwner) {
+		this.productOwner = productOwner;
+	}
+
+	public String getTeam1() {
+		return team1;
+	}
+
+	public void setTeam1(String team1) {
+		this.team1 = team1;
+	}
+
+	public String getTeam2() {
+		return team2;
+	}
+
+	public void setTeam2(String team2) {
+		this.team2 = team2;
+	}
+
+	public String getTeam3() {
+		return team3;
+	}
+
+	public void setTeam3(String team3) {
+		this.team3 = team3;
+	}
+
+	public String getTeam4() {
+		return team4;
+	}
+
+	public void setTeam4(String team4) {
+		this.team4 = team4;
+	}
+
 	@Persistent(mappedBy = "proyecto")
 	@Element(dependent = "true")
 	private List<HistoriaUsuario> historiasUsuario = new ArrayList<HistoriaUsuario>();
@@ -39,6 +99,8 @@ public class Proyecto implements Serializable, Comparable<Proyecto> {
 	public void setHistoriasUsuario(List<HistoriaUsuario> historiasUsuario) {
 		this.historiasUsuario = historiasUsuario;
 	}
+	
+	
 
 	public Proyecto() {
 		super();
