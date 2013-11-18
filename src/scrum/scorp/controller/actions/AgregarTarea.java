@@ -8,11 +8,9 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpSession;
 
 import scrum.scorp.model.PMF;
 import scrum.scorp.model.entity.HistoriaUsuario;
-import scrum.scorp.model.entity.Proyecto;
 import scrum.scorp.model.entity.Tarea;
 
 public class AgregarTarea extends Action implements Serializable {
@@ -29,16 +27,12 @@ public class AgregarTarea extends Action implements Serializable {
 			List<HistoriaUsuario> resultado = (List<HistoriaUsuario>) query
 					.execute(request.getParameter("historia"));
 			HistoriaUsuario historia_actual = null;
-			System.out.println(resultado.size());
 			if (!resultado.isEmpty()) {
 				for (HistoriaUsuario h : resultado) {
 					historia_actual = h;
 				}
 			}
-			System.out.println("tares3");
-			System.out.println(historia_actual.getNombre());
 			historia_actual.getTarea().add(t);
-			System.out.println("tares4");
 			try {
 				pm.makePersistent(historia_actual);
 				pm.makePersistent(t);
@@ -57,5 +51,4 @@ public class AgregarTarea extends Action implements Serializable {
 		rd.forward(request, response);
 
 	}
-
 }

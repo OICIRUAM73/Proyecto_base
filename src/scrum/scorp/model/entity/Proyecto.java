@@ -3,6 +3,8 @@ package scrum.scorp.model.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javax.jdo.annotations.Element;
 import javax.jdo.annotations.IdGeneratorStrategy;
@@ -28,6 +30,51 @@ public class Proyecto implements Serializable, Comparable<Proyecto> {
 	private String fInicio;
 	@Persistent
 	private String fFin;
+	@Persistent
+	private String scrumMaster;
+	@Persistent
+	private String productOwner;
+	@Persistent
+	private List<String> teamScrum;
+	@Persistent
+	private Set<String> sprints;
+	
+	public static Set<String> sprintsGlobal= new TreeSet<String>();
+	
+	public Set<String> getSprints() {
+		return sprints;
+	}
+
+	public void setSprints(Set<String> sprints) {
+		this.sprints = sprints;
+	}
+
+	public List<String> getTeamScrum() {
+		return teamScrum;
+	}
+
+	public void setTeamScrum(List<String> teamScrum) {
+		this.teamScrum = teamScrum;
+	}
+
+	public String getScrumMaster() {
+		return scrumMaster;
+	}
+
+	public void setScrumMaster(String scrumMaster) {
+		this.scrumMaster = scrumMaster;
+	}
+
+	public String getProductOwner() {
+		return productOwner;
+	}
+
+	public void setProductOwner(String productOwner) {
+		this.productOwner = productOwner;
+	}
+
+	
+
 	@Persistent(mappedBy = "proyecto")
 	@Element(dependent = "true")
 	private List<HistoriaUsuario> historiasUsuario = new ArrayList<HistoriaUsuario>();
@@ -39,6 +86,8 @@ public class Proyecto implements Serializable, Comparable<Proyecto> {
 	public void setHistoriasUsuario(List<HistoriaUsuario> historiasUsuario) {
 		this.historiasUsuario = historiasUsuario;
 	}
+	
+	
 
 	public Proyecto() {
 		super();

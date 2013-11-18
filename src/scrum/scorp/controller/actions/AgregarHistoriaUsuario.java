@@ -2,6 +2,7 @@ package scrum.scorp.controller.actions;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -26,6 +27,7 @@ public class AgregarHistoriaUsuario extends Action implements Serializable {
 			hu.setPrioridad(request.getParameter("prioridad"));
 			hu.setEsfuerzo(request.getParameter("esfuerzo"));
 			hu.setEstado("NO INICIADA");
+			hu.setSprint(0);
 			Query query = pm.newQuery(Proyecto.class);
 			query.setFilter("nombre == proyecto_param");
 			
@@ -40,6 +42,7 @@ public class AgregarHistoriaUsuario extends Action implements Serializable {
 				}
 			}
 			proyecto.getHistoriasUsuario().add(hu);
+		
 			
 			try {
 				pm.makePersistent(hu);

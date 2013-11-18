@@ -8,7 +8,7 @@
 <meta name="description"
 	content="This an example of how you may use Twitter Bootstrap Modals in your webpage. Here in this tutorial it is discussed how to create Modal windows using Twitter Bootstrap with several examples and explanations.">
 <link
-	href="twitter-bootstrap/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css"
+	href="/twitter-bootstrap/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css"
 	href="/bootstrap/css/plantilla.css" />
@@ -31,63 +31,97 @@
 	</div>
 
 	<div class="container-fluid">
-		<div class="accordion" id="accordion2">
-			<%@ page import="java.util.List"%>
-			<%@ page import="scrum.scorp.model.entity.HistoriaUsuario"%>
-			<%@ page import="scrum.scorp.model.entity.Tarea"%>
-			<%@ page import="scrum.scorp.model.entity.Proyecto"%>
-			<%@ page import="scrum.scorp.model.jdo.JDO"%>
-			<%
-				HistoriaUsuario hu = new HistoriaUsuario();
-				HttpSession sesion = request.getSession();
-				String proy = (String) sesion.getAttribute("trabajo");
-				List<HistoriaUsuario> lista_historias = hu.listar_historias(proy);
-			%>
-			<%
-				for (int i = 0; i < lista_historias.size(); i++) {
-					HistoriaUsuario historia = (HistoriaUsuario) lista_historias
-							.get(i);
-					out.print("<div class=\"accordion-group\">"
-							+ "<div class=\"accordion-heading\">"
-							+ "<a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordion2\" href=\"#collapse"
-							+ i
-							+ "\">"
-							+ historia.getNombre()
-							+ "</a>"
-							+ "</div>"
-							+ "<div id=\"collapse"
-							+ i
-							+ "\" class=\"accordion-body collapse\" style=\"height: 0px; \">"
-							+ "<div class=\"accordion-inner\">");
-					List<Tarea> lista_Tareas = historia.getTarea();
-					out.print("<div class=\"table-responsive\">"
-							+ "<table class=\"table table-condensed table-hover table-striped\">"
-							+ "<tr>"
-							+ "<td colspan=\"5\" style=\"text-align: center\">LISTA DE TAREAS DE LA HISTORIA DE USUARIO:"
-							+ historia.getNombre()
-							+ " </td>"
-							+ "</tr>"
-							+ "<tr>"
-							+ "<td style=\"text-align: center\">ACTIVIDAD</td>"
-							+ "<td style=\"text-align: center\">RESULTADO ESPERADO</td>"
-							+ "</tr><tr>");
-					for (int j = 0; j < lista_Tareas.size(); j++) {
-						Tarea tarea = (Tarea) lista_Tareas.get(j);
+		<%@ page import="java.util.List"%>
+		<%@ page import="scrum.scorp.model.entity.HistoriaUsuario"%>
+		<%@ page import="scrum.scorp.model.entity.Tarea"%>
+		<%@ page import="scrum.scorp.model.entity.CriterioAceptacion"%>
+		<%@ page import="scrum.scorp.model.entity.Proyecto"%>
+		<%@ page import="scrum.scorp.model.jdo.JDO"%>
+		<%
+			HistoriaUsuario hu = new HistoriaUsuario();
+			HttpSession sesion = request.getSession();
+			String proy = (String) sesion.getAttribute("trabajo");
+			List<HistoriaUsuario> lista_historias = hu.listar_historias(proy);
+			String historia = (String) sesion.getAttribute("historia");
+			HistoriaUsuario hist_actual = null;
+			for (HistoriaUsuario h : lista_historias) {
+				if (h.getNombre().equals(historia))
+					hist_actual = h;
+			}
+			List<Tarea> lista_Tareas = hist_actual.getTarea();
+			List<CriterioAceptacion> lista_criterios = hist_actual
+					.getCriterio();
+		%>
+		<br> <br>
+		<div class="row show-grid">
+			<div class="span12" style="text-align: left;">
+				<span class="label label-success" id="lblhistoria"
+					style="text-align: center; font-size: x-large;"> <%
+ 	out.print(hist_actual.getNombre());
+ %>
+				</span>
+			</div>
+		</div>
+		<br> <br>
 
-						out.print("<td style=\"text-align: center\">"
-								+ tarea.getActividad() + " </td>"
-								+ "<td style=\"text-align: center\">"
-								+ tarea.getResultado() + "</td></tr>");
-					}
-					out.print("</table></div>" + "</div>" + "</div>");
-				}
-			%>
+		<div class="row show-grid" style="text-align: center;">
+			<div class="span8 style=" text-align:center;">
+				<table class="table table-hover">
+					<caption align="top">
+						<label class="span8 label label-important"
+							style="text-align: center; font-size: large;"><strong>Tareas</strong></label>
+							<br>
+					</caption>
+					<thead>
+						<tr>
+							<th style="text-align: center">#</th>
+							<th style="text-align: center">Actividad</th>
+							<th style="text-align: center">Resultado</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+							for (int j = 0; j < lista_Tareas.size(); j++) {
+								Tarea tarea = (Tarea) lista_Tareas.get(j);
+								out.print("<td style=\"text-align: center\">" + (j + 1)
+										+ "</td><td style=\"text-align: center\">"
+										+ tarea.getActividad() + " </td>"
+										+ "<td style=\"text-align: center\">"
+										+ tarea.getResultado() + "</td></tr>");
+							}
+							out.print("</table>");
+						%>
+					</tbody>
+				</table>
+			</div>
+			<div class="span8" style="text-align: center;">
+				<table class="table table-hover">
+					<caption align="top"><label class="span8 label label-important"
+							style="text-align: center; font-size: large;"><strong>Criterios de Aceptacion</strong></label>
+							<br></caption>
+					<thead>
+						<tr>
+							<th style="text-align: center">#</th>
+							<th style="text-align: center">Criterio de Aceptacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+							for (int j = 0; j < lista_criterios.size(); j++) {
+								CriterioAceptacion criterio = (CriterioAceptacion) lista_criterios
+										.get(j);
+								out.print("<td style=\"text-align: center\">" + (j + 1)
+										+ "</td><td style=\"text-align: center\">"
+										+ criterio.getCriterio() + " </td>" + "</tr>");
+							}
+							out.print("</table>");
+						%>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 
-
-
-	<div class=span4></div>
 
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
 	<script
