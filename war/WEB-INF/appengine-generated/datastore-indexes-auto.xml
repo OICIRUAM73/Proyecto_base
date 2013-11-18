@@ -1,20 +1,4 @@
-<!-- Indices written at Fri, 8 Nov 2013 10:09:38 COT -->
+<!-- Indices written at Mon, 18 Nov 2013 14:31:30 ECT -->
 
-<datastore-indexes>
+<datastore-indexes/>
 
-    <!-- Used 2 times in query history -->
-    <datastore-index kind="HistoriaUsuario" ancestor="true" source="auto">
-        <property name="historiasUsuario_INTEGER_IDX" direction="asc"/>
-    </datastore-index>
-
-    <!-- Used 1 time in query history -->
-    <datastore-index kind="CriterioAceptacion" ancestor="true" source="auto">
-        <property name="criterio_INTEGER_IDX" direction="asc"/>
-    </datastore-index>
-
-    <!-- Used 1 time in query history -->
-    <datastore-index kind="Tarea" ancestor="true" source="auto">
-        <property name="tarea_INTEGER_IDX" direction="asc"/>
-    </datastore-index>
-
-</datastore-indexes>
